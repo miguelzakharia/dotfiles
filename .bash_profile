@@ -47,5 +47,10 @@ complete -W "NSGlobalDomain" defaults;
 # Add `killall` tab completion for common apps
 complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes SystemUIServer Terminal Twitter" killall;
 
+# Autocomplete for git commands and branches.
+if [ -f ~/.git-completion.bash ]; then
+. ~/.git-completion.bash
+fi
+
 # ASP.NET vNext
 source kvm.sh

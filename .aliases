@@ -16,7 +16,14 @@ alias h="history"
 alias j="jobs"
 alias subl='open -a "Sublime Text"'
 alias server="python -m SimpleHTTPServer"
-alias apex='cd ~/code/work/apex'
+alias apex="cd ~/code/work/apex && la"
+
+# Git
+alias gs="git status "
+alias gco="git checkout "
+alias gcob="git checkout -b "
+alias gcm="git commit "
+alias gsave="git add --all && git commit -m 'SAVE POINT'"
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
