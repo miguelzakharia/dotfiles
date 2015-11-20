@@ -4,7 +4,7 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
 alias ~="cd ~" # `cd` is probably faster to type though
-alias -- -="cd -"
+alias -- ="cd -"
 
 # Shortcuts
 alias d="cd ~/Documents/Dropbox"
@@ -15,8 +15,10 @@ alias g="git"
 alias h="history"
 alias j="jobs"
 alias subl='open -a "Sublime Text"'
+alias vscode='open -a "Visual Studio Code"'
 alias server="python -m SimpleHTTPServer"
 alias apex="cd ~/code/work/apex && la"
+alias scriptcs="mono ~/scriptcs/scriptcs.exe"
 
 # Git
 alias gs="git status "
