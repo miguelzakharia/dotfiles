@@ -51,6 +51,3 @@ complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes Syste
 if [ -f ~/.git-completion.bash ]; then
 . ~/.git-completion.bash
 fi
-
-# ASP.NET vNext
-source kvm.sh
