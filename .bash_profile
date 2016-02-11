@@ -52,3 +52,6 @@ complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes Syste
 if [ -f ~/.git-completion.bash ]; then
 . ~/.git-completion.bash
 fi
+
+# See http://krypted.com/mac-os-x/maximum-files-in-mac-os-x/ for details
+ulimit -S -n 2048
