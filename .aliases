@@ -18,7 +18,7 @@ alias subl='open -a "Sublime Text"'
 alias vscode='open -a "Visual Studio Code"'
 alias server="python -m SimpleHTTPServer"
 alias apex="cd ~/code/work/apex && la"
-alias scriptcs="mono ~/scriptcs/scriptcs.exe"
+alias scriptcs="mono ~/scriptcs/artifacts/Release/bin/scriptcs.exe"
 alias ui="cd ~/code/work/apex/AssetBook.Radar.UI"
 
 alias preview="open -a '$PREVIEW'"
