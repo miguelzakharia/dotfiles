@@ -4,6 +4,39 @@
 
 [alias]
 
+	# Checkout a branch
+	co = checkout
+
+	# Switch to a branch, creating it if necessary
+	go = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
+
+	# Starting work; pull changes from remote and rebase any local commits
+	up = pull --rebase --prune
+
+	# Commit all changes including untracked files
+	cm = !git add -A && git commit -m
+
+	# Add all changes including untracked files and create a commit
+	save = !git add -A && git commit -m 'SAVEPOINT'
+
+	# Only commits tracked changes
+	wip = commit -am "WIP"
+
+	# Resets the previous commit, but keeps all the changes from that commit in the working directory
+	undo = reset HEAD~1 --mixed
+
+	# Amend the currently staged files to the latest commit
+	amend = commit -a --amend --reuse-message=HEAD
+
+	# Want to reset? Commit everything and then hard reset. Safer this way.
+	wipe = !git add -A && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard
+
+	# Clean up merged branches. Defaults to CI.
+	bclean = "!f() { git branch --merged ${1-CI} | grep -v " ${1-CI}$" | xargs -r git branch -d; }; f"
+
+	# Switches to CI, updates it with origin, deletes all branches that have been merged
+	bdone = "!f() { git checkout ${1-CI} && git up && git bclean ${1-CI}; }; f"
+
 	# View abbreviated SHA, description, and history graph of the latest 20 commits
 	l = log --pretty=oneline -n 20 --graph --abbrev-commit
 
@@ -25,16 +58,10 @@
 	# Commit all changes
 	ca = !git add -A && git commit -av
 
-	# Switch to a branch, creating it if necessary
-	go = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
-
 	# Show verbose output about tags, branches or remotes
 	tags = tag -l
 	branches = branch -a
 	remotes = remote -v
-
-	# Amend the currently staged files to the latest commit
-	amend = commit --amend --reuse-message=HEAD
 
 	# Credit an author on the latest commit
 	credit = "!f() { git commit --amend --author \"$1 <$2>\" -C HEAD; }; f"
