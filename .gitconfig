@@ -32,7 +32,7 @@
 	wipe = !git add -A && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard
 
 	# Clean up merged branches. Defaults to CI.
-	bclean = "!f() { git branch --merged ${1-CI} | grep -v " ${1-CI}$" | xargs -r git branch -d; }; f"
+	bclean = "!f() { git branch --merged ${1-CI} | grep -v " ${1-CI}$" | xargs -n 1 git branch -d; }; f"
 
 	# Switches to CI, updates it with origin, deletes all branches that have been merged
 	bdone = "!f() { git checkout ${1-CI} && git up && git bclean ${1-CI}; }; f"
