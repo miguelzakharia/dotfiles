@@ -27,6 +27,11 @@ set noeol
 " Make new tabs open to the bottom or right instead of usual
 set splitbelow
 set splitright
+" Tab settings
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+set noexpandtab
 " Centralize backups, swapfiles and undo history
 set backupdir=~/.vim/backups
 set directory=~/.vim/swaps
