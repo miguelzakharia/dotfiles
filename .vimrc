@@ -24,6 +24,9 @@ let mapleader=","
 " Don’t add empty newlines at the end of files
 set binary
 set noeol
+" Make new tabs open to the bottom or right instead of usual
+set splitbelow
+set splitright
 " Centralize backups, swapfiles and undo history
 set backupdir=~/.vim/backups
 set directory=~/.vim/swaps
