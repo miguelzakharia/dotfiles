@@ -27,6 +27,8 @@ set noeol
 " Make new tabs open to the bottom or right instead of usual
 set splitbelow
 set splitright
+" Prevent line wrapping
+set nowrap
 " Tab settings
 set tabstop=2
 set shiftwidth=2
