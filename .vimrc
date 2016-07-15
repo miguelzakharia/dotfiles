@@ -1,7 +1,6 @@
-" Use the Solarized Dark theme
-set background=dark
 colorscheme monokai
-let g:solarized_termtrans=1
+" vim-monokai now only support 256 colors in terminal.
+set t_Co=256
 
 " Make Vim more useful
 set nocompatible
@@ -121,7 +120,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'editorconfig/editorconfig-vim'
 Plug 'maksimr/vim-jsbeautify'
 Plug 'mattn/emmet-vim.git'
-Plug 'junegunn/vim-easy-align'
 Plug 'pangloss/vim-javascript'
+Plug 'crusoexia/vim-monokai'
 
 call plug#end()
