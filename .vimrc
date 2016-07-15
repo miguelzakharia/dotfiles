@@ -114,3 +114,12 @@ if has("autocmd")
 	" Treat .md files as Markdown
 	autocmd BufNewFile,BufRead *.md setlocal filetype=markdown
 endif
+
+" ***** PLUGINS *****
+call plug#begin('~/.vim/plugged')
+
+Plugin 'editorconfig/editorconfig-vim'
+Plugin 'maksimr/vim-jsbeautify'
+
+" Add plugins to &runtimepath
+call plug#end()
