@@ -1,6 +1,4 @@
-colorscheme monokai
-" vim-monokai now only support 256 colors in terminal.
-set t_Co=256
+colorscheme japanesque
 
 " Make Vim more useful
 set nocompatible
@@ -58,8 +56,8 @@ set cursorline
 " Make tabs as wide as two spaces
 set tabstop=2
 " Show “invisible” characters
-set lcs=tab:▸\ ,trail:·,eol:¬,nbsp:_
-set list
+"set lcs=tab:▸\ ,trail:·,eol:¬,nbsp:_
+set nolist
 " Highlight searches
 set hlsearch
 " Ignore case of searches
@@ -114,6 +112,10 @@ if has("autocmd")
 	autocmd BufNewFile,BufRead *.md setlocal filetype=markdown
 endif
 
+" Configuration for vim-indent-guides
+set ts=2 sw=2 et
+let g:indent_guides_enable_on_vim_startup=1
+
 " ***** PLUGINS *****
 call plug#begin('~/.vim/plugged')
 
@@ -122,5 +124,7 @@ Plug 'maksimr/vim-jsbeautify'
 Plug 'mattn/emmet-vim.git'
 Plug 'pangloss/vim-javascript'
 Plug 'crusoexia/vim-monokai'
+Plug 'othree/html5.vim'
+Plug 'nathanaelkane/vim-indent-guides'
 
 call plug#end()
