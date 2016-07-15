@@ -118,8 +118,10 @@ endif
 " ***** PLUGINS *****
 call plug#begin('~/.vim/plugged')
 
-Plugin 'editorconfig/editorconfig-vim'
-Plugin 'maksimr/vim-jsbeautify'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'maksimr/vim-jsbeautify'
+Plug 'mattn/emmet-vim.git'
+Plug 'junegunn/vim-easy-align'
+Plug 'pangloss/vim-javascript'
 
-" Add plugins to &runtimepath
 call plug#end()
