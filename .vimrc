@@ -112,6 +112,12 @@ if has("autocmd")
 	autocmd BufNewFile,BufRead *.md setlocal filetype=markdown
 endif
 
+" Key mappings
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
 " Configuration for vim-indent-guides
 set ts=2 sw=2 et
 let g:indent_guides_enable_on_vim_startup=1
