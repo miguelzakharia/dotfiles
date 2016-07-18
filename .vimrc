@@ -116,6 +116,9 @@ endif
 set ts=2 sw=2 et
 let g:indent_guides_enable_on_vim_startup=1
 
+" Configuration for vim-airline
+set laststatus=2
+
 " ***** PLUGINS *****
 call plug#begin('~/.vim/plugged')
 
@@ -126,5 +129,6 @@ Plug 'pangloss/vim-javascript'
 Plug 'crusoexia/vim-monokai'
 Plug 'othree/html5.vim'
 Plug 'nathanaelkane/vim-indent-guides'
+Plug 'vim-airline/vim-airline'
 
 call plug#end()
