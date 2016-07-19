@@ -174,3 +174,6 @@ alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resource
 
 # Reload the shell (i.e. invoke as a login shell)
 alias reload="exec $SHELL -l"
+
+# Use MacVim as default
+alias vim="/usr/local/Cellar/macvim/7.4-104/MacVim.app/Contents/MacOS/MacVim"
