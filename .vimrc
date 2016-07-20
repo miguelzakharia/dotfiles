@@ -131,6 +131,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'editorconfig/editorconfig-vim'
 Plug 'maksimr/vim-jsbeautify'
 Plug 'mattn/emmet-vim.git'
+Plug 'jelera/vim-javascript-syntax'
 Plug 'pangloss/vim-javascript'
 Plug 'crusoexia/vim-monokai'
 Plug 'othree/html5.vim'
@@ -138,5 +139,7 @@ Plug 'nathanaelkane/vim-indent-guides'
 Plug 'vim-airline/vim-airline'
 Plug 'Shougo/neocomplete.vim'
 Plug 'Valloric/YouCompleteMe'
+Plug 'marijnh/tern_for_vim'
+Plug 'Raimondi/delimitMate'
 
 call plug#end()
