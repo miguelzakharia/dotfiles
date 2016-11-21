@@ -7,7 +7,7 @@ alias ~="cd ~" # `cd` is probably faster to type though
 #alias ---="cd -"
 
 # Shortcuts
-alias d="cd ~/Documents/Dropbox"
+alias d="cd ~/Dropbox"
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
 alias p="cd ~/projects"
@@ -176,4 +176,4 @@ alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resource
 alias reload="exec $SHELL -l"
 
 # Use MacVim as default
-alias vim="/usr/local/Cellar/macvim/7.4-104/MacVim.app/Contents/MacOS/MacVim"
+alias vim="/usr/local/Cellar/macvim/8.0-116/MacVim.app/Contents/MacOS/MacVim"
