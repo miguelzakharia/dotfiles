@@ -125,6 +125,11 @@ let g:indent_guides_enable_on_vim_startup=1
 " Configuration for vim-airline
 set laststatus=2
 
+" Configuration for tern
+let g:tern_map_keys=1
+let g:tern_show_argument_hints='on_hold'
+let g:tern_map_prefix = '<leader>'
+
 " ***** PLUGINS *****
 call plug#begin('~/.vim/plugged')
 
@@ -141,5 +146,7 @@ Plug 'Shougo/neocomplete.vim'
 Plug 'Valloric/YouCompleteMe'
 Plug 'marijnh/tern_for_vim'
 Plug 'Raimondi/delimitMate'
+Plug 'othree/html5.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
 call plug#end()

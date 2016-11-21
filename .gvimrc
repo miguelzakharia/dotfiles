@@ -1,5 +1,5 @@
 " set background=dark
-colorscheme japanesque
+colorscheme monokai
 " Use 14pt Monaco
 set guifont=Monaco:h12
 " Better line-height
