@@ -15,7 +15,7 @@ alias g="git"
 alias h="history"
 alias j="jobs"
 alias subl='open -a "Sublime Text"'
-alias vscode='open -a "Visual Studio Code"'
+alias code='open -a "Visual Studio Code"'
 alias server="python -m SimpleHTTPServer"
 alias apex="cd ~/code/work/apex && la"
 alias scriptcs="mono ~/scriptcs/artifacts/Release/bin/scriptcs.exe"
@@ -29,7 +29,7 @@ alias firefox="open -a firefox"
 alias opera="open -a opera"
 alias chrome="open -a google\ chrome"
 # Open Chrome using Dev profile
-alias chromedev="open -na Google\ Chrome --args --profile-directory=Profile\ 1"
+alias chromedev="open -na Google\ Chrome --args --profile-directory=Profile\ 1 --remote-debugging-port=9222"
 alias chromium="open -a chromium"
 alias f='open -a Finder'
 
