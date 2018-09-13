@@ -42,7 +42,7 @@
 
 	# Squash N commits into one. Based on https://stackoverflow.com/a/21890252/1052725.
 	squash = "!f(){ git reset --soft HEAD~${1} && git commit --edit -m\"$(git log --format=%B --reverse HEAD..HEAD@{1})\"; };f"
-	
+
 	# View the current working tree status using the short format
 	s = status -s
 
@@ -162,6 +162,10 @@
 
 	# Include summaries of merged commits in newly created merge commit messages
 	log = true
+
+[pager]
+	diff = diff-so-fancy | less --tabs=1,5 -RFX
+	show = diff-so-fancy | less --tabs=1,5 -RFX
 
 [push]
 
