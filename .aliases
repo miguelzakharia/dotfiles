@@ -92,7 +92,7 @@ alias ips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[
 alias flushdns="dscacheutil -flushcache; sudo killall -HUP mDNSResponder; echo DNS flushed"
 
 # Edit hosts file
-alias hosts="sudo vscode /private/etc/hosts"
+alias hosts="sudo code /private/etc/hosts"
 
 # Clean up LaunchServices to remove duplicates in the “Open With” menu
 alias lscleanup="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user && killall Finder"

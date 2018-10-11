@@ -90,3 +90,29 @@ source $ZSH/oh-my-zsh.sh
 
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $HOME/.aliases
+
+export PATH="$HOME/.yarn/bin:$PATH"
+export DOTNET_RUNTIME_ID="osx-x64"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Begin - Sets shell to use vi mode. See http://bit.ly/2NCo6NY for more info.
+bindkey -v
+
+bindkey '^P' up-history
+bindkey '^N' down-history
+bindkey '^?' backward-delete-char
+bindkey '^h' backward-delete-char
+bindkey '^w' backward-kill-word
+bindkey '^r' history-incremental-search-backward
+
+function zle-line-init zle-keymap-select {
+    VIM_PROMPT="%{$fg_bold[yellow]%} [% NORMAL]%  %{$reset_color%}"
+    RPS1="${${KEYMAP/vicmd/$VIM_PROMPT}/(main|viins)/} $EPS1"
+    zle reset-prompt
+}
+
+zle -N zle-line-init
+zle -N zle-keymap-select
+export KEYTIMEOUT=1
+# End - Sets shell to use vi mode. See http://bit.ly/2NCo6NY for more info.
