@@ -92,7 +92,10 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $HOME/.aliases
 
 export PATH="$HOME/.yarn/bin:$PATH"
+<<<<<<< HEAD
 export DOTNET_RUNTIME_ID="osx-x64"
+=======
+>>>>>>> 33eae074b6e5bf9e851388a7752b15186627e57a
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
