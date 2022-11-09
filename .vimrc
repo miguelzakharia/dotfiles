@@ -1,13 +1,19 @@
-colorscheme japanesque
-
 " Make Vim more useful
 set nocompatible
+" Hide the extra mode info
+set noshowmode
 " Use the OS clipboard by default (on versions compiled with `+clipboard`)
 set clipboard=unnamed
+" Reduce lag when switching modes
+set ttimeoutlen=50
 " Enhance command-line completion
 set wildmenu
+
+if !has('nvim')
 " Allow cursor keys in insert mode
-set esckeys
+	set esckeys
+endif
+
 " Allow backspace in insert mode
 set backspace=indent,eol,start
 " Optimize for fast terminal connections
@@ -17,7 +23,7 @@ set gdefault
 " Use UTF-8 without BOM
 set encoding=utf-8 nobomb
 " Change mapleader
-let mapleader=","
+let mapleader=" "
 " Don’t add empty newlines at the end of files
 set binary
 set noeol
@@ -33,7 +39,7 @@ set softtabstop=2
 set noexpandtab
 " Centralize backups, swapfiles and undo history
 set backupdir=~/.vim/backups
-set directory=~/.vim/swaps
+" set directory=~/.vim/swaps
 if exists("&undodir")
 	set undodir=~/.vim/undo
 endif
@@ -90,6 +96,10 @@ endif
 " Start scrolling three lines before the horizontal window border
 set scrolloff=3
 
+" Change cursor style based on input mode
+let &t_SI="\e[6 q"
+let &t_EI="\e[2 q"
+
 " Strip trailing whitespace (,ss)
 function! StripWhitespace()
 	let save_cursor = getpos(".")
@@ -98,7 +108,7 @@ function! StripWhitespace()
 	call setpos('.', save_cursor)
 	call setreg('/', old_query)
 endfunction
-noremap <leader>ss :call StripWhitespace()<CR>
+noremap <leader>sw :call StripWhitespace()<CR>
 " Save a file as root (,W)
 noremap <leader>W :w !sudo tee % > /dev/null<CR>
 
@@ -112,41 +122,27 @@ if has("autocmd")
 	autocmd BufNewFile,BufRead *.md setlocal filetype=markdown
 endif
 
+set wildignore+=*/tmp/*,*/.git/*,*/bin/*,*/obj/*,*.so,*.swp,*.zip
+
 " Key mappings
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
+nnoremap <Leader>j <C-W><C-J>
+nnoremap <Leader>k <C-W><C-K>
+nnoremap <Leader>l <C-W><C-L>
+nnoremap <Leader>h <C-W><C-H>
 
-" Configuration for vim-indent-guides
-set ts=2 sw=2 et
-let g:indent_guides_enable_on_vim_startup=1
+" Custom key mappings
+map <C-n> :NERDTreeToggle<CR>
+map <leader>/ :noh<CR>
 
-" Configuration for vim-airline
-set laststatus=2
+source ~/.vim/plugins.vim
+source ~/.vim/omnisharp.vim
+source ~/.vim/ale.vim
+source ~/.vim/coc.vim
+source ~/.vim/ctrlp.vim
 
-" Configuration for tern
-let g:tern_map_keys=1
-let g:tern_show_argument_hints='on_hold'
-let g:tern_map_prefix = '<leader>'
-
-" ***** PLUGINS *****
-call plug#begin('~/.vim/plugged')
-
-Plug 'editorconfig/editorconfig-vim'
-Plug 'maksimr/vim-jsbeautify'
-Plug 'mattn/emmet-vim.git'
-Plug 'jelera/vim-javascript-syntax'
-Plug 'pangloss/vim-javascript'
-Plug 'crusoexia/vim-monokai'
-Plug 'othree/html5.vim'
-Plug 'nathanaelkane/vim-indent-guides'
-Plug 'vim-airline/vim-airline'
-Plug 'Shougo/neocomplete.vim'
-Plug 'Valloric/YouCompleteMe'
-Plug 'marijnh/tern_for_vim'
-Plug 'Raimondi/delimitMate'
-Plug 'othree/html5.vim'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-
-call plug#end()
+set background=dark
+colorscheme snazzy
+let g:SnazzyTransparent=1
+let g:lightline = {
+			\ 'colorscheme': 'snazzy'
+			\}

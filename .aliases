@@ -13,6 +13,7 @@ alias ping="prettyping --nolegend"
 alias top="htop"
 alias du="ncdu --color dark -rr -x --exclude .git --exclude node_modules"
 alias help="tldr"
+alias diff="colordiff"
 
 # Shortcuts
 alias d="cd ~/Dropbox"
@@ -180,4 +181,4 @@ alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resource
 alias reload="exec $SHELL -l"
 
 # Use MacVim as default
-alias vim="/usr/local/Cellar/macvim/8.0-127/MacVim.app/Contents/MacOS/MacVim"
+# alias vim="/usr/local/Cellar/macvim/8.0-127/MacVim.app/Contents/MacOS/MacVim"
