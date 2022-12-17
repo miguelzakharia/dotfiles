@@ -3,10 +3,10 @@
 # Install command-line tools using Homebrew.
 
 # Ask for the administrator password upfront.
-sudo -v
+# sudo -v
 
 # Keep-alive: update existing `sudo` time stamp until `.osx` has finished.
-while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+# while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 # Make sure we’re using the latest Homebrew.
 brew update
@@ -24,21 +24,15 @@ brew install moreutils
 # Install GNU `find`, `locate`, `updatedb`, and `xargs`, `g`-prefixed.
 brew install findutils
 # Install GNU `sed`, overwriting the built-in `sed`.
-brew install gnu-sed --with-default-names
+brew install gnu-sed
 # Install Bash 4.
 # Note: don’t forget to add `/usr/local/bin/bash` to `/etc/shells` before
 # running `chsh`.
-brew install bash
-brew install bash-completion
+# brew install bash
+# brew install bash-completion
 
 # Install `wget` with IRI support.
-brew install wget --with-iri
-
-# Install more recent versions of some OS X tools.
-brew install vim --override-system-vi
-brew install homebrew/dupes/grep
-brew install homebrew/dupes/screen
-brew install homebrew/php/php55 --with-gmp
+brew install wget
 
 # Install other useful binaries.
 brew install ack
@@ -50,6 +44,16 @@ brew install pigz
 brew install pv
 brew install tree
 brew install webkit2png
+
+brew install zsh-syntax-highlighting
+brew install bat
+brew install neovim
+brew install prettyping
+brew install ncdu
+brew install colordiff
+brew install tldr
+brew install duti
+brew install htop
 
 # Install Node.js. Note: this installs `npm` too, using the recommended
 # installation method.
