@@ -116,3 +116,5 @@ zle -N zle-line-init
 zle -N zle-keymap-select
 export KEYTIMEOUT=1
 # End - Sets shell to use vi mode. See http://bit.ly/2NCo6NY for more info.
+
+export BAT_CONFIG_PATH="$HOME/bat.conf"
