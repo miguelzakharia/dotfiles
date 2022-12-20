@@ -23,6 +23,7 @@ brew "gh"
 brew "htop"
 brew "moreutils"
 brew "ncdu"
+brew "ngrok/ngrok/ngrok"
 brew "openssl"
 brew "p7zip"
 brew "pigz"
@@ -32,6 +33,7 @@ brew "qpdf"
 brew "tldr"
 brew "tree"
 brew "webkit2png"
+brew "z"
 brew "zsh"
 brew "zsh-syntax-highlighting"
 
@@ -47,6 +49,7 @@ cask "google-chrome"
 mas "Hand Mirror", id:1502839586
 cask "iina"
 mas "BetterSnapTool", id:417375580
+mas "Magnet", id:441258766
 cask "microsoft-azure-storage-explorer"
 cask "obs"
 brew "openvpn"

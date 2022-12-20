@@ -39,7 +39,7 @@ alias chromium="open -a chromium"
 alias f='open -a Finder'
 
 # general shortcuts
-alias gh="open -a google\ chrome 'http://github.com/miguelzakharia'"
+alias ghprofile="open -a google\ chrome 'http://github.com/miguelzakharia'"
 alias spotify="osascript ~/code/SpotifyControl/SpotifyControl.scpt"
 
 alias vpn="scutil --nc start "

@@ -117,3 +117,4 @@ export KEYTIMEOUT=1
 # End - Sets shell to use vi mode. See http://bit.ly/2NCo6NY for more info.
 
 export BAT_CONFIG_PATH="$HOME/bat.conf"
+. $(brew --prefix)/etc/profile.d/z.sh
