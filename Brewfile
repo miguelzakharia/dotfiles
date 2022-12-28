@@ -44,6 +44,7 @@ cask "bartender"
 cask "boop"
 # cask "daisydisk"
 cask "dropshare"
+mas install "Evernote", id:406056744
 cask "fantastical"
 cask "google-chrome"
 mas "Hand Mirror", id:1502839586
