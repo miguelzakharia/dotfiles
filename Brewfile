@@ -43,7 +43,9 @@ brew "zsh-syntax-highlighting"
 cask "1password"
 cask "azure-data-studio"
 cask "bartender"
+# mas "BetterSnapTool", id:417375580
 cask "boop"
+mas install "CLocker" id:1056643111
 # cask "daisydisk"
 mas install "Dropover", id:1355679052
 mas install "Evernote", id:406056744
@@ -51,7 +53,6 @@ cask "fantastical"
 cask "google-chrome"
 mas "Hand Mirror", id:1502839586
 cask "iina"
-mas "BetterSnapTool", id:417375580
 mas "Magnet", id:441258766
 cask "microsoft-azure-storage-explorer"
 cask "obs"
@@ -79,3 +80,5 @@ brew "node"
 
 # Misc
 cask "font-fira-code"
+
+echo "Dropshare"
