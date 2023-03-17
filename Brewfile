@@ -10,6 +10,7 @@ brew "mas"
 
 # Utils
 brew "ack"
+brew "ag"
 brew "azure-cli"
 brew "bat"
 brew "colordiff"
@@ -44,7 +45,7 @@ cask "azure-data-studio"
 cask "bartender"
 cask "boop"
 # cask "daisydisk"
-cask "dropshare"
+mas install "Dropover", id:1355679052
 mas install "Evernote", id:406056744
 cask "fantastical"
 cask "google-chrome"
