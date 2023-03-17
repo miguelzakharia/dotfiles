@@ -1,12 +1,12 @@
 {
-  "timeStamp": 1674570249860,
-  "version": "1.46.0",
+  "timeStamp": 1678238427952,
+  "version": "1.47.2",
   "userSettings": {
     "advancedUserEnabled": true,
     "cloudStorageEnabled": true,
     "firewallPaneMinimized": false,
     "importedLists": [],
-    "popupPanelSections": 31
+    "popupPanelSections": 63
   },
   "selectedFilterLists": [
     "user-filters",
@@ -37,6 +37,7 @@
     "getpocket.com",
     "moz-extension-scheme",
     "opera-scheme",
+    "portal.azure.com",
     "pulse.assetbook.net",
     "seq.assetbook.net",
     "teams.microsoft.com",
