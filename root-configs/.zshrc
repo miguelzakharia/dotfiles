@@ -1,9 +1,16 @@
-# From https://github.com/sindresorhus/pure#getting-started to use pure-prompt
-# autoload -U promptinit; promptinit
-# prompt pure
-
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
+
+# source $HOME/.path
+source $HOME/.exports
+source $HOME/.aliases
+source $HOME/.functions
+# source $HOME/.extra
+
+# From https://github.com/sindresorhus/pure#getting-started to use pure-prompt
+fpath+=/opt/homebrew/share/zsh/site-functions
+autoload -U promptinit; promptinit
+prompt pure
 
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/miguel/.oh-my-zsh
@@ -11,7 +18,7 @@ export ZSH=/Users/miguel/.oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME=""
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -55,7 +62,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git z)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -89,7 +96,6 @@ fi
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source $HOME/.aliases
 
 export PATH="$HOME/.yarn/bin:$PATH"
 
@@ -113,8 +119,8 @@ function zle-line-init zle-keymap-select {
 
 zle -N zle-line-init
 zle -N zle-keymap-select
-export KEYTIMEOUT=1
 # End - Sets shell to use vi mode. See http://bit.ly/2NCo6NY for more info.
 
-export BAT_CONFIG_PATH="$HOME/bat.conf"
-. $(brew --prefix)/etc/profile.d/z.sh
+# . $(brew --prefix)/etc/profile.d/z.sh
+
+export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"

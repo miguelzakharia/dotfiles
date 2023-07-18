@@ -30,8 +30,11 @@ brew "p7zip"
 brew "pigz"
 brew "prettyping"
 brew "pv"
+brew "pure"
 brew "qpdf"
+brew "stow"
 brew "tldr"
+brew "tmux"
 brew "tree"
 brew "webkit2png"
 brew "yarn"
@@ -45,16 +48,18 @@ cask "azure-data-studio"
 cask "bartender"
 # mas "BetterSnapTool", id:417375580
 cask "boop"
-mas install "CLocker" id:1056643111
+mas "Clocker", id:1056643111
 # cask "daisydisk"
-mas install "Dropover", id:1355679052
-mas install "Evernote", id:406056744
+mas "Dropover", id:1355679052
+mas "Evernote", id:406056744
 cask "fantastical"
 cask "google-chrome"
 mas "Hand Mirror", id:1502839586
 cask "iina"
 mas "Magnet", id:441258766
 cask "microsoft-azure-storage-explorer"
+cask "microsoft-edge"
+mas "Microsoft Remote Desktop", id:1295203466
 cask "obs"
 brew "openvpn"
 cask "postman"
@@ -81,4 +86,4 @@ brew "node"
 # Misc
 cask "font-fira-code"
 
-echo "Dropshare"
+## echo "Dropshare"
