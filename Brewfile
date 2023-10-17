@@ -5,6 +5,7 @@ tap "homebrew/cask"
 tap "homebrew/cask-fonts"
 tap "homebrew/core"
 tap "homebrew/services"
+tap "espanso/espanso"
 
 brew "mas"
 
@@ -32,6 +33,7 @@ brew "prettyping"
 brew "pv"
 brew "pure"
 brew "qpdf"
+brew "ripgrep"
 brew "stow"
 brew "tldr"
 brew "tmux"
@@ -51,6 +53,7 @@ cask "boop"
 mas "Clocker", id:1056643111
 # cask "daisydisk"
 mas "Dropover", id:1355679052
+brew "espanso"
 mas "Evernote", id:406056744
 cask "fantastical"
 cask "google-chrome"

@@ -8,7 +8,7 @@ alias ~="cd ~" # `cd` is probably faster to type though
 
 # Utilities
 # From https://remysharp.com/2018/08/23/cli-improved
-alias cat="bat"
+alias cat="bat --theme='OneHalfDark'"
 alias ping="prettyping --nolegend"
 alias top="htop"
 alias du="ncdu --color dark -rr -x --exclude .git --exclude node_modules"

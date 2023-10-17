@@ -12,6 +12,7 @@ function doIt() {
 	stow root-configs
 	stow nvim
 	stow bat
+	stow --target=~/Library/Application\ Support/ espanso
 
   source ~/.zshrc;
 }
