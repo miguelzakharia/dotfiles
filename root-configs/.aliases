@@ -37,6 +37,7 @@ alias chrome="open -a google\ chrome"
 alias chromedev="open -na Google\ Chrome --args --profile-directory=Profile\ 1 --remote-debugging-port=9222"
 alias chromium="open -a chromium"
 alias f='open -a Finder'
+alias cs='csharprepl'
 
 # general shortcuts
 alias ghprofile="open -a google\ chrome 'http://github.com/miguelzakharia'"
@@ -60,13 +61,13 @@ else # OS X `ls`
 fi
 
 # List all files colorized in long format
-alias l="ls -lF ${colorflag}"
+alias l="ls -ltrh ${colorflag}"
 
 # List all files colorized in long format, including dot files
-alias la="ls -laF ${colorflag}"
+alias la="ls -latrh ${colorflag}"
 
 # List only directories
-alias lsd="ls -lF ${colorflag} | grep --color=never '^d'"
+alias ld="ls -l ${colorflag} | grep --color=never '^d'"
 
 # Always use color output for `ls`
 alias ls="command ls ${colorflag}"

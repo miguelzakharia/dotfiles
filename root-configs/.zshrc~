@@ -1,8 +1,5 @@
-
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
-
-autoload -Uz compinit && compinit
 
 # source $HOME/.path
 source $HOME/.exports
@@ -60,6 +57,9 @@ COMPLETION_WAITING_DOTS="true"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
+autoload -U compinstall
+autoload -Uz compinit bashcompinit
+compinit && bashcompinit
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -171,9 +171,8 @@ export DOTNET_SUGGEST_SCRIPT_VERSION="1.0.0"
 export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
 export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"
 
-
 # The following lines were added by compinstall
-zstyle :compinstall filename '/Users/miguel/dotfiles/root-configs/.zshrc'
+zstyle :compinstall filename '/Users/miguel/.zshrc'
 
 autoload -Uz compinit
 compinit

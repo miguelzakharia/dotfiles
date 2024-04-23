@@ -6,12 +6,14 @@ tap "homebrew/cask-fonts"
 tap "homebrew/core"
 tap "homebrew/services"
 tap "espanso/espanso"
+tap "azure/azd"
 
 brew "mas"
 
 # Utils
 brew "ack"
 brew "ag"
+brew "azd"
 brew "azure-cli"
 brew "bat"
 brew "colordiff"
