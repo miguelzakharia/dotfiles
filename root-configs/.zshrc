@@ -1,180 +1,57 @@
+autoload -Uz compinit
+compinit
 
-# If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
 
-autoload -Uz compinit && compinit
+source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
 
-# source $HOME/.path
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
 source $HOME/.exports
 source $HOME/.aliases
 source $HOME/.functions
-# source $HOME/.extra
+source $HOME/.osx
 
-# From https://github.com/sindresorhus/pure#getting-started to use pure-prompt
-fpath+=/opt/homebrew/share/zsh/site-functions
-autoload -U promptinit; promptinit
-prompt pure
+# history setup
+setopt share_history
+setopt hist_expire_dups_first
+setopt hist_ignore_dups
+setopt hist_verify
 
-# Path to your oh-my-zsh installation.
-export ZSH=/Users/miguel/.oh-my-zsh
-
-# Set name of the theme to load. Optionally, if you set this to "random"
-# it'll load a random theme each time that oh-my-zsh is loaded.
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME=""
-
-# Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
-
-# Uncomment the following line to use hyphen-insensitive completion. Case
-# sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
-
-# Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
-
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
-
-# Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment the following line to enable command auto-correction.
-ENABLE_CORRECTION="true"
-
-# Uncomment the following line to display red dots whilst waiting for completion.
-COMPLETION_WAITING_DOTS="true"
-
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# HIST_STAMPS="mm/dd/yyyy"
-
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
-
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(git z)
-
-source $ZSH/oh-my-zsh.sh
-
-# User configuration
-
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
-else
-  export EDITOR='nvim'
-fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
+# completion using arrow keys (based on history)
+bindkey '^[[A' history-search-backward
+bindkey '^[[B' history-search-forward
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-export PATH="$HOME/.yarn/bin:$PATH"
+# ---- Eza (better ls) -----
+alias ls="eza --icons=always"
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# ---- Zoxide (better cd) ----
+eval "$(zoxide init zsh)"
 
-# Begin - Sets shell to use vi mode. See http://bit.ly/2NCo6NY for more info.
-bindkey -v
-
-bindkey '^P' up-history
-bindkey '^N' down-history
-bindkey '^?' backward-delete-char
-bindkey '^h' backward-delete-char
-bindkey '^w' backward-kill-word
-bindkey '^r' history-incremental-search-backward
-
-function zle-line-init zle-keymap-select {
-    VIM_PROMPT="%{$fg_bold[yellow]%} [% NORMAL]%  %{$reset_color%}"
-    RPS1="${${KEYMAP/vicmd/$VIM_PROMPT}/(main|viins)/} $EPS1"
-    zle reset-prompt
-}
-
-zle -N zle-line-init
-zle -N zle-keymap-select
-# End - Sets shell to use vi mode. See http://bit.ly/2NCo6NY for more info.
-
-# zsh parameter completion for the dotnet CLI
-
-# dotnet suggest shell complete script start
+# .NET Core
 _dotnet_zsh_complete()
 {
-    # debug lines, uncomment to get state variables passed to this function
-    # echo "\n\n\nstate:\t'$state'"
-    # echo "line:\t'$line'"
-    # echo "words:\t$words"
+  local completions=("$(dotnet complete "$words")")
 
-    # Get full path to script because dotnet-suggest needs it
-    # NOTE: this requires a command registered with dotnet-suggest be
-    # on the PATH
-    full_path=`which ${words[1]}` # zsh arrays are 1-indexed
-    # Get the full line
-    # $words array when quoted like this gets expanded out into the full line
-    full_line="$words"
+  # If the completion list is empty, just continue with filename selection
+  if [ -z "$completions" ]
+  then
+    _arguments '*::arguments: _normal'
+    return
+  fi
 
-    # Get the completion results, will be newline-delimited
-    completions=$(dotnet suggest get --executable "$full_path" -- "$full_line")
-    # explode the completions by linefeed instead of by spaces into the descriptions for the
-    # _values helper function.
-
-    exploded=(${(f)completions})
-    # for later - once we have descriptions from dotnet suggest, we can stitch them
-    # together like so:
-    # described=()
-    # for i in {1..$#exploded}; do
-    #     argument="${exploded[$i]}"
-    #     description="hello description $i"
-    #     entry=($argument"["$description"]")
-    #     described+=("$entry")
-    # done
-    _values 'suggestions' $exploded
+  # This is not a variable assignment, don't remove spaces!
+  _values = "${(ps:\n:)completions}"
 }
 
-# apply this function to each command the dotnet-suggest knows about
-compdef _dotnet_zsh_complete $(dotnet-suggest list)
+compdef _dotnet_zsh_complete dotnet
+# end .NET core
 
-export DOTNET_SUGGEST_SCRIPT_VERSION="1.0.0"
-# dotnet suggest shell complete script end
-
-# . $(brew --prefix)/etc/profile.d/z.sh
-
-export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
-export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"
-
-
-# The following lines were added by compinstall
-zstyle :compinstall filename '/Users/miguel/dotfiles/root-configs/.zshrc'
-
-autoload -Uz compinit
-compinit
-# End of lines added by compinstall

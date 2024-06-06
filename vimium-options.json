@@ -1,0 +1,73 @@
+{
+  "settingsVersion": "2.1.2",
+  "exclusionRules": [
+    {
+      "passKeys": "",
+      "pattern": "https?://mail.google.com/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://tv.youtube.com/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://calendar.google.com/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://docs.google.com/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://mint.intuit.com/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://www.figma.com/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://www.youtube.com/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://bbodi.github.io/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://radio.garden/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://www.lofi.cafe/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://www.google.com/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://play.decentraland.org/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://www.twitch.tv/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://read.readwise.io/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://localhost:3000/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://beta.destinyitemmanager.com/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://whodis.vercel.app/*"
+    }
+  ]
+}
