@@ -2,9 +2,9 @@
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # ngrok autocomplete
-if command -v ngrok &>/dev/null; then
-  eval "$(ngrok completion)"
-fi
+#if command -v ngrok &>/dev/null; then
+#  eval "$(ngrok completion)"
+#fi
 
 # Setting PATH for Python 3.11
 # The original version is saved in .zprofile.pysave
