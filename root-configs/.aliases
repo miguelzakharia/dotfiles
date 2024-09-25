@@ -1,3 +1,5 @@
+alias cd="z"
+
 # Easier navigation: .., ..., ...., ....., ~ and -
 alias ..="cd .."
 alias ...="cd ../.."

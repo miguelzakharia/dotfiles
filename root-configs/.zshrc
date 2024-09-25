@@ -1,6 +1,3 @@
-autoload -Uz compinit
-compinit
-
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -16,7 +13,7 @@ source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
 source $HOME/.exports
 source $HOME/.aliases
 source $HOME/.functions
-source $HOME/.osx
+#source $HOME/.macos
 
 # history setup
 setopt share_history
@@ -55,3 +52,4 @@ _dotnet_zsh_complete()
 compdef _dotnet_zsh_complete dotnet
 # end .NET core
 
+autoload -U compinit; compinit

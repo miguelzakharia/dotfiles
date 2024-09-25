@@ -1,6 +1,0 @@
-# cmd + ctrl + click anywhere on a window to move it
-# https://mmazzarolo.com/blog/2022-04-16-drag-window-by-clicking-anywhere-on-macos/
-defaults write -g NSWindowShouldDragOnGesture -bool true
-# disable the click anywhere to move a window behavior
-# defaults delete -g NSWindowShouldDragOnGesture
-
