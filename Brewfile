@@ -7,6 +7,7 @@ tap "homebrew/core"
 tap "homebrew/services"
 tap "espanso/espanso"
 tap "azure/azd"
+tap "jesseduffield/lazygit/lazygit"
 
 brew "mas"
 
@@ -21,10 +22,12 @@ brew "coreutils"
 brew "curl"
 brew "diff-so-fancy"
 brew "duti"
+brew "ffmpeg"
 brew "findutils"
 brew "git"
 brew "gh"
 brew "htop"
+brew "imagemagick"
 brew "moreutils"
 brew "ncdu"
 brew "ngrok/ngrok/ngrok"
@@ -87,6 +90,7 @@ mas "Xcode", id: 497799835
 # Programming
 cask "dotnet"
 brew "node"
+brew "supabase/tap/supabase"
 
 # Misc
 cask "font-fira-code"
