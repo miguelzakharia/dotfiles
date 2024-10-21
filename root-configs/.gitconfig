@@ -164,6 +164,7 @@
 
 	# Include summaries of merged commits in newly created merge commit messages
 	log = true
+	ff = true
 
 [pager]
 	diff = diff-so-fancy | less --tabs=1,5 -RFX
