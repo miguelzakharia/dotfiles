@@ -1,3 +1,8 @@
+# Navigate through Aerospace workspaces more easily
+function ff() {
+	aerospace list-windows --all --format "%{window-id} | %{app-name} | %{window-title}" | fzf --bind "enter:execute(bash -c 'aerospace focus --window-id {1}')+abort"
+}
+
 # navigation
 cx() { cd "$@" && l; }
 fcd() { cd "$(find . -type d -not -path '*/.*' | fzf)" && l; }

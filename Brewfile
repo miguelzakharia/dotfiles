@@ -9,11 +9,14 @@ tap "espanso/espanso"
 tap "azure/azd"
 tap "jesseduffield/lazygit/lazygit"
 tap "jesseduffield/lazydocker/lazydocker"
+tap "FelixKratz/formulae"
 
 brew "mas"
 
 # Utils
+brew "1password-cli"
 brew "ack"
+cask "nikitabobko/tap/aerospace"
 brew "ag"
 brew "azd"
 brew "azure-cli"
@@ -38,7 +41,9 @@ brew "ncdu"
 brew "ngrok/ngrok/ngrok"
 brew "openssl"
 brew "p7zip"
+brew "pipet"
 brew "pigz"
+brew "pngpaste"
 brew "poppler"
 brew "prettyping"
 brew "pv"
@@ -46,6 +51,7 @@ brew "pure"
 brew "qpdf"
 brew "ripgrep"
 brew "sevenzip"
+brew "sketchybar"
 brew "starship"
 brew "stow"
 brew "tldr"
@@ -58,38 +64,33 @@ brew "z"
 brew "zoxide"
 brew "zsh"
 brew "zsh-syntax-highlighting"
+brew "zsh-vi-mode"
 
 # Apps
 cask "1password"
+# cask "nikitabobko/tap/aerospace"
 cask "azure-data-studio"
-cask "bartender"
+# cask "bartender"
 # mas "BetterSnapTool", id:417375580
 cask "boop"
 mas "Clocker", id:1056643111
 # cask "daisydisk"
 mas "Dropover", id:1355679052
-brew "espanso"
-mas "Evernote", id:406056744
-cask "fantastical"
+# brew "espanso"
 cask "google-chrome"
-mas "Hand Mirror", id:1502839586
 cask "iina"
-mas "Magnet", id:441258766
-cask "microsoft-azure-storage-explorer"
-cask "microsoft-edge"
+# mas "Magnet", id:441258766
+# cask "microsoft-azure-storage-explorer"
 mas "Microsoft Remote Desktop", id:1295203466
-cask "obs"
 brew "openvpn"
 cask "postman"
 cask "raycast"
 cask "slack"
-mas "Spark – Email App by Readdle", id:1176895641
 cask "snipaste"
 cask "spotify"
-cask "textsniper"
+mas "TextSniper - OCR, Copy & Paste", id:1528890965
 cask "transmit"
 # mas "Vinegar - Tube Cleaner", id:1591303229
-cask "zoom"
 
 # IDE-ish
 brew "neovim"
@@ -106,5 +107,6 @@ brew "supabase/tap/supabase"
 # Misc
 cask "font-fira-code"
 brew "font-symbols-only-nerd-font"
+cask "font-hack-nerd-font"
 
 ## echo "Dropshare"

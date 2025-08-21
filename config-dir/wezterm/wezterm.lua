@@ -87,13 +87,13 @@ config.colors = {
 	indexed = { [16] = "#ffbd5e", [17] = "#ff6e5e" },
 }
 
-config.font = wezterm.font("MesloLGS Nerd Font Mono")
+config.font = wezterm.font("JetBrainsMono Nerd Font", { weight = "Regular", stretch = "Normal", style = "Normal" })
 config.font_size = 16
 
 config.enable_tab_bar = false
 
 config.window_decorations = "RESIZE"
-config.window_background_opacity = 0.97
+config.window_background_opacity = 1.0
 config.macos_window_background_blur = 9
 
 config.window_background_gradient = {
@@ -125,8 +125,8 @@ config.window_background_gradient = {
 		-- "#24243e",
 	},
 	-- Specifies a Linear gradient starting in the top left corner.
-	-- orientation = { Linear = { angle = -45.0 } },
-	orientation = "Vertical",
+	orientation = { Linear = { angle = -45.0 } },
+	-- orientation = "Horizontal",
 	-- preset = "Magma",
 }
 

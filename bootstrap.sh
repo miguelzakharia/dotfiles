@@ -5,10 +5,10 @@ function doIt() {
 	sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 	brew bundle # Install items in Brewfile
 
-	stow root-configs                  # Send those dotfiles to ~
-	stow --target=~/.config config-dir # Send configs to ~/.config
+	stow root-configs                      # Send those dotfiles to ~
+	stow --target=$HOME/.config config-dir # Send configs to ~/.config
 
-	source ~/.zshrc
+	source $HOME/.zshrc
 }
 
 if [ "$1" == "--force" ] || [ "$1" == "-f" ]; then
